@@ -5,6 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import notFound from './middleware/not-found';
 import logger from './middleware/logger';
+import userRouter from './routes/user-routes';
 
 // Express App Instance
 const app: Application = express();
@@ -32,6 +33,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(logger);
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Routes
+app.use('/api/users', userRouter);
+
+// Error Middlewares
 app.use(notFound);
 
 export default app;
