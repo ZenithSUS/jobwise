@@ -1,5 +1,5 @@
 import UserRepository from '../repositories/user-repository';
-import { User } from '../types/user';
+import { User } from '../helpers/database-type';
 
 class UserService {
   /**
@@ -58,6 +58,13 @@ class UserService {
     return this.userRepository.deleteUserById(userId);
   }
 
+  /**
+   * Updates a user by its id
+   * @param {string} userId - The user id to be updated
+   * @param {Partial<User>} user - The user object with the fields to be updated
+   * @returns {Promise<User>} - The updated user
+   * @throws {Error} - If there is an error during the operation
+   */
   async updateUserById(userId: string, user: Partial<User>): Promise<User> {
     return this.userRepository.updateUserById(userId, user);
   }

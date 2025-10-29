@@ -1,5 +1,5 @@
 import supabase from '../database/supabase';
-import { User } from '../types/user';
+import { User } from '../helpers/database-type';
 
 class UserRepository {
   private table = 'Users';
@@ -40,7 +40,7 @@ class UserRepository {
 
       if (error) throw error;
 
-      return data;
+      return data ?? [];
     } catch (error) {
       throw error;
     }

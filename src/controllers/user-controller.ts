@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import UserService from '../services/user-service';
-import { User } from '../types/user';
+import { User } from '../helpers/database-type';
 
 class UserController {
   /**
