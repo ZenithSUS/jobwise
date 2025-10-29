@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "user_seed": "tsx src/scripts/seed-users.ts",
+    "user_delete": "tsx src/scripts/delete-users.ts"
   },
   "keywords": [
     "Job Search",
     "AI Suggestions",
-    "Jobwise"
+    "Jobwise",
+    "Jobwise AI"
   ],
   "author": "ZenithSUS",
   "license": "ISC",

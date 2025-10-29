@@ -14,5 +14,9 @@ const router: Router = Router();
 // Routes for User
 router.post('/', userController.create);
 router.get('/', userController.getAll);
+router.get('/:id', userController.getById);
+router.get('/page/:page/limit/:limit', userController.getPagination);
+router.delete('/:id', userController.deleteById);
+router.put('/:id', userController.updateById);
 
 export default router;

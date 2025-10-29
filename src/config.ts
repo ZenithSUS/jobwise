@@ -20,4 +20,20 @@ const config: Config = {
   SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY || '',
 };
 
+if (
+  !config.SUPABASE_URL ||
+  !config.SUPABASE_API_KEY ||
+  !config.SUPABASE_SERVICE_ROLE_KEY
+) {
+  throw new Error('Missing Supabase credentials');
+}
+
+if (!config.JWT_SECRET) {
+  throw new Error('Missing JWT secret');
+}
+
+if (!config.PORT) {
+  throw new Error('Missing PORT');
+}
+
 export default config;

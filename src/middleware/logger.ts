@@ -6,7 +6,7 @@ import { NextFunction, Request, Response } from 'express';
  * @param {Response} res - The HTTP response
  * @param {NextFunction} next - The next middleware function
  */
-function logger(req: Request, res: Response, next: NextFunction) {
+function logger(req: Request, res: Response, next: NextFunction): void {
   // Log the request
   console.log(
     `[${new Date().toLocaleString()}] - Method: ${req.method} ${req.url}`,

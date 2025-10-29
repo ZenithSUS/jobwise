@@ -14,3 +14,9 @@ export interface User {
   updated_at: Date; // timestamp
   subscription_plan_id?: string | null; // FK → subscriptions.id
 }
+
+export enum UserRoles {
+  Freelancer = 'freelancer',
+  Client = 'client',
+  Admin = 'admin',
+}
