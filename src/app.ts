@@ -12,6 +12,7 @@ import logger from './middleware/logger';
 // Routes
 import userRouter from './routes/user-routes';
 import jobRouter from './routes/job-routes';
+import projectRouter from './routes/project-routes';
 
 // Express App Instance
 const app: Application = express();
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 // Routes
 app.use('/api/users', userRouter);
 app.use('/api/jobs', jobRouter);
+app.use('/api/projects', projectRouter);
 
 // Error Middlewares
 app.use(notFound);
