@@ -55,7 +55,9 @@ class ProjectRepository {
     try {
       const { data, error } = await supabase
         .from(this.table)
-        .select()
+        .select(`*, user:Users ( full_name, email, bio, skills )`, {
+          count: 'exact',
+        })
         .eq('id', id)
         .single();
 
@@ -79,7 +81,9 @@ class ProjectRepository {
       const offset = (page - 1) * limit;
       const { data, error } = await supabase
         .from(this.table)
-        .select()
+        .select(`*, user:Users ( full_name, email, bio, skills )`, {
+          count: 'exact',
+        })
         .limit(limit)
         .range(offset, offset + limit - 1);
 
