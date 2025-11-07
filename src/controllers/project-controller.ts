@@ -109,7 +109,7 @@ class ProjectController {
    * @param res
    * @returns The updated project or an error
    */
-  updatedById = async (req: Request, res: Response) => {
+  updateById = async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
 
