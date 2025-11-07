@@ -1,11 +1,17 @@
+// External Dependencies
 import express, { Application } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import path from 'path';
 import { fileURLToPath } from 'url';
+
+// Middlewares
 import notFound from './middleware/not-found';
 import logger from './middleware/logger';
+
+// Routes
 import userRouter from './routes/user-routes';
+import jobRouter from './routes/job-routes';
 
 // Express App Instance
 const app: Application = express();
@@ -36,6 +42,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Routes
 app.use('/api/users', userRouter);
+app.use('/api/jobs', jobRouter);
 
 // Error Middlewares
 app.use(notFound);
