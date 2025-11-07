@@ -8,8 +8,10 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "user:seed": "tsx src/scripts/seed-users.ts",
+    "project:seed": "tsx src/scripts/seed-projects.ts",
+    "job:seed": "tsx src/scripts/seed-jobs.ts",
     "user:delete": "tsx src/scripts/delete-users.ts",
-    "job:seed": "tsx src/scripts/seed-jobs.ts"
+    "project:delete": "tsx src/scripts/delete-projects.ts"
   },
   "keywords": [
     "Job Search",
